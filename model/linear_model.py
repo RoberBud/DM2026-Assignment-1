@@ -49,7 +49,7 @@ class LinearModel():
 			y_pred = self.act_fn(np.squeeze(X_val @ self.W))
 			val_loss = self.loss_fn(y_val,y_pred)
 			self.val_losses.append(val_loss)
-			if (i+1) % 20 == 0:
+			if (i+1) % 50 == 0:
 				print(f'{i+1}. Training loss: {loss}, Val loss:{val_loss}')
 
 		plot_learning_curve(self.train_losses,self.val_losses)
